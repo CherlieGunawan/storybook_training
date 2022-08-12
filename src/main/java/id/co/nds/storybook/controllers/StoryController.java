@@ -2,6 +2,7 @@ package id.co.nds.storybook.controllers;
 
 import java.util.List;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import id.co.nds.storybook.Exceptions.ClientException;
 import id.co.nds.storybook.controllers.ControllerGroup.PostingNew;
 import id.co.nds.storybook.entities.StoryEntity;
+import id.co.nds.storybook.exceptions.ClientException;
 import id.co.nds.storybook.models.ResponseModel;
 import id.co.nds.storybook.models.StoryModel;
 import id.co.nds.storybook.services.StoryService;
@@ -30,6 +31,7 @@ public class StoryController {
 
     @PostMapping("/add")
     public ResponseEntity<ResponseModel> addNew(@Validated(PostingNew.class) @RequestBody StoryModel storyModel,
+            @NotBlank(message = "Book ID is required")
             @Pattern(regexp = "^book[0-9]{4}$", message = "Book ID starts with book followed by 4 digits of number")
             @RequestParam String bookId) throws ClientException {
         StoryEntity story = storyService.addNew(storyModel, bookId);

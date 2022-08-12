@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import id.co.nds.storybook.Exceptions.ClientException;
+import id.co.nds.storybook.exceptions.ClientException;
 import id.co.nds.storybook.models.ResponseModel;
 
 @ControllerAdvice

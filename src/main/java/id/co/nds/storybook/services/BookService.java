@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import id.co.nds.storybook.Exceptions.ClientException;
 import id.co.nds.storybook.entities.BookEntity;
+import id.co.nds.storybook.exceptions.ClientException;
 import id.co.nds.storybook.models.BookModel;
 import id.co.nds.storybook.repos.BookRepo;
 import id.co.nds.storybook.validators.ObjectValidator;
