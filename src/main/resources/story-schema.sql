@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS ms_book;
+
+CREATE TABLE ms_book (
+    id VARCHAR(8) PRIMARY KEY NOT NULL,
+    name VARCHAR(50) NOT NULL
+)
+WITH (
+    OIDS=FALSE
+);
+
+SELECT * FROM ms_book;
